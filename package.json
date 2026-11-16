@@ -1,0 +1,27 @@
+{
+  "name": "icaruslab",
+  "private": true,
+  "version": "0.1.0",
+  "description": "Self-hosted LAN storage",
+  "workspaces": [
+    "server",
+    "client"
+  ],
+  "scripts": {
+    "dev": "concurrently -k \"npm run dev -w server\" \"npm run dev -w client\"",
+    "build": "npm run build -w client",
+    "start": "npm run start -w server",
+    "test": "npm run test -w server",
+    "typecheck": "npm run typecheck -w server && npm run typecheck -w client"
+  },
+  "devDependencies": {
+    "concurrently": "^9.2.1"
+  },
+  "engines": {
+    "node": ">=22.13"
+  },
+  "allowScripts": {
+    "sharp@0.34.5": true,
+    "esbuild@0.28.2": true
+  }
+}

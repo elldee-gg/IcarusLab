@@ -142,6 +142,13 @@ vite.config.js.timestamp-*
 vite.config.ts.timestamp-*
 .vite/
 
+# IcarusLab runtime
+data/
+storage/
+*.sqlite
+*.sqlite-wal
+*.sqlite-shm
+
 # Astro generated types
 .astro/
 

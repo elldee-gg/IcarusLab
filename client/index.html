@@ -1,0 +1,24 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>IcarusLab</title>
+    <link rel="icon" href="/favicon.svg" type="image/svg+xml" />
+    <script>
+      (function () {
+        var saved = localStorage.getItem('icarus-theme') || 'system';
+        var look = localStorage.getItem('icarus-aesthetic') || 'winvista';
+        if (look !== 'win98' && look !== 'winxp' && look !== 'winvista' && look !== 'modern' && look !== 'html') look = 'winvista';
+        var dark = saved === 'dark' || (saved !== 'light' && matchMedia('(prefers-color-scheme: dark)').matches);
+        document.documentElement.dataset.theme = dark ? 'dark' : 'light';
+        document.documentElement.dataset.themeChoice = saved;
+        document.documentElement.dataset.aesthetic = look;
+      })();
+    </script>
+  </head>
+  <body>
+    <div id="root"></div>
+    <script type="module" src="/src/main.tsx"></script>
+  </body>
+</html>
